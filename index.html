@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember &amp; Oat Coffee | Fresh coffee and warm pastries</title>
+<meta name="description" content="Ember &amp; Oat Coffee serves fresh coffee and warm pastries downtown. Order ahead in minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#1B1512;
+  --panel:#272019;
+  --oat:#EADFCB;
+  --muted:#B9AB94;
+  --ember:#E2622B;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--oat);line-height:1.6;font-size:17px}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ember);outline-offset:3px}
+
+.btn{display:inline-block;background:var(--ember);color:#1B1512;font-weight:700;text-decoration:none;padding:14px 28px;border-radius:10px;font-size:1rem}
+.btn:hover{background:#f07a45}
+.btn.alt{background:transparent;border:2px solid var(--oat);color:var(--oat)}
+.btn.alt:hover{background:rgba(234,223,203,.1)}
+
+header{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 20px;background:rgba(27,21,18,.96);border-bottom:1px solid #3a2f26}
+.brand{font-family:var(--serif);font-size:1.35rem;font-weight:700}
+.brand span{color:var(--ember)}
+header .btn{padding:9px 18px;font-size:.95rem}
+
+.hero{position:relative;min-height:55vh;display:flex;align-items:flex-end;background:var(--panel);overflow:hidden}
+.hero .bg{position:absolute;inset:0}
+.hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(27,21,18,.95) 5%,rgba(27,21,18,.3) 70%)}
+.hero .copy{position:relative;padding:40px 20px 44px;max-width:700px}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.5rem,9vw,4.6rem);line-height:1.04;margin-bottom:14px}
+.hero p{max-width:34ch;margin-bottom:24px;color:#e0d4bf;font-size:1.1rem}
+
+section{padding:60px 20px}
+.wrap{max-width:960px;margin:0 auto}
+h2{font-family:var(--serif);font-size:clamp(1.9rem,6vw,2.7rem);line-height:1.1;margin-bottom:10px}
+.lead{max-width:50ch;margin-bottom:28px;color:var(--muted)}
+
+.menu{display:grid;grid-template-columns:1fr;gap:16px}
+.item{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:center;background:var(--panel);border-radius:12px;padding:12px}
+.item figure{aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:#3a2f26}
+.item h3{font-family:var(--serif);font-size:1.25rem;line-height:1.2}
+.item p{color:var(--muted);font-size:.95rem;margin-top:4px}
+.item .price{display:block;margin-top:6px;font-weight:700;color:var(--ember);font-size:1.1rem}
+@media(min-width:760px){.menu{grid-template-columns:1fr 1fr}.item{grid-template-columns:130px 1fr}}
+
+.about{background:var(--panel)}
+.about p{max-width:56ch;font-size:1.1rem}
+
+.details{list-style:none;margin:20px 0 28px}
+.details li{padding:6px 0}
+.details b{display:inline-block;min-width:84px;color:var(--ember);font-weight:700}
+.details a{text-decoration:underline;text-underline-offset:3px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+
+footer{padding:22px 20px;text-align:center;font-size:.9rem;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <span class="brand">Ember <span>&amp;</span> Oat</span>
+  <a class="btn" href="#visit">Order Ahead</a>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="bg"><img src="hero.jpg" alt="Cozy Ember and Oat coffee shop interior in warm morning light" onerror="this.style.display='none'"></div>
+    <div class="copy">
+      <h1>Fresh coffee. Warm pastries.</h1>
+      <p>Your corner of calm, downtown. Order ahead and skip the line.</p>
+      <a class="btn" href="#visit">Order Ahead</a>
+    </div>
+  </div>
+
+  <section id="menu">
+    <div class="wrap">
+      <h2>Today’s favorites</h2>
+      <p class="lead">Brewed fresh, baked every morning.</p>
+      <div class="menu">
+        <article class="item">
+          <figure><img src="cappuccino.jpg" alt="Cappuccino with latte art" loading="lazy" onerror="this.style.display='none'"></figure>
+          <div><h3>Cappuccino</h3><p>Rich espresso, silky steamed milk, soft foam.</p><span class="price">$4.50</span></div>
+        </article>
+        <article class="item">
+          <figure><img src="latte.jpg" alt="Iced caramel latte with caramel drizzle" loading="lazy" onerror="this.style.display='none'"></figure>
+          <div><h3>Iced caramel latte</h3><p>Cold espresso, milk, and a ribbon of caramel.</p><span class="price">$5.50</span></div>
+        </article>
+        <article class="item">
+          <figure><img src="croissant.jpg" alt="Golden butter croissant" loading="lazy" onerror="this.style.display='none'"></figure>
+          <div><h3>Butter croissant</h3><p>Flaky, golden, baked fresh every morning.</p><span class="price">$4.00</span></div>
+        </article>
+        <article class="item">
+          <figure><img src="muffin.jpg" alt="Fresh blueberry muffin" loading="lazy" onerror="this.style.display='none'"></figure>
+          <div><h3>Blueberry muffin</h3><p>Soft, juicy, and full of real blueberries.</p><span class="price">$3.50</span></div>
+        </article>
+      </div>
+      <p class="lead" style="margin-top:22px">Also on the menu: cold brew, $5.</p>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap">
+      <h2>About us</h2>
+      <p>Ember &amp; Oat is a small neighborhood café. We roast with care, bake early, and keep the music low, so you can read, work, or just sit and breathe.</p>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="wrap">
+      <h2>Order ahead or visit</h2>
+      <p class="lead">Send your order and we’ll have it ready when you arrive.</p>
+      <ul class="details">
+        <li><b>Hours</b> Mon–Sun, 7am–6pm</li>
+        <li><b>Address</b> 48 Maple Avenue, Downtown</li>
+        <li><b>Email</b> <a href="mailto:hello@emberandoat.com">hello@emberandoat.com</a></li>
+        <li><b>Phone</b> <a href="tel:+15550100142">+1 555 010 0142</a></li>
+      </ul>
+      <div class="actions">
+        <a class="btn" href="mailto:hello@emberandoat.com?subject=Order%20ahead">Order Ahead</a>
+        <a class="btn alt" href="https://wa.me/15550100142?text=Hi%2C%20I%27d%20like%20to%20order%20ahead." target="_blank" rel="noopener">Message on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© Ember &amp; Oat Coffee. Sample website design.</footer>
+
+</body>
+</html>
